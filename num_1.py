@@ -34,11 +34,3 @@ score_game(game_core_v2)
 count = game_core_v2(number)
 
 print(f"Вы угадали число {number} за {count} попыток.")
-
-
-# Проверяем
-score_game(game_core_v2)
-
-count = game_core_v2(number)
-
-print(f"Вы угадали число {number} за {count} попыток.")
