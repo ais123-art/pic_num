@@ -3,18 +3,15 @@ import numpy as np
 number = np.random.randint(1, 101)
 
 def game_core_v2(number):
-    '''Последовательно увеличиваем predict на значение 4. Если
-    значение predict становится > загаданного number, то уменьшаем
-    predict на 5, пока predict не станет равен number. Функция
-    принимает загаданное число и шаг, а возвращает число попыток
-    '''
+    '''Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно
+     или меньше нужного. Функция принимает загаданное число и возвращает число попыток '''
     count = 1
     predict = np.random.randint(1, 101)
     while number != predict:
         count += 1
-        if number > predict: 
+        if number > predict:
             predict += 4
-        elif number < predict: 
+        elif number < predict:
             predict -= 5
     return (count) # выход из цикла, если угадали
 
@@ -29,6 +26,14 @@ def score_game(game_core_v2):
         score = int(np.mean(count_ls))
         print(f"Ваш алгоритм угадывает число в среднем за {score} попыток")
         return (score)
+
+
+# Проверяем
+score_game(game_core_v2)
+
+count = game_core_v2(number)
+
+print(f"Вы угадали число {number} за {count} попыток.")
 
 
 # Проверяем
